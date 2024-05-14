@@ -141,7 +141,7 @@ class AnrHandler {
             return;
         }
 
-        if(anrFastCallback != null) {
+        if (anrFastCallback != null) {
             try {
                 anrFastCallback.onCrash(null, null);
             } catch (Exception ignored) {

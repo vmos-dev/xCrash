@@ -62,7 +62,7 @@ xCrash has been used in many Android apps (including iQIYI video) on different p
 
 ```Gradle
 dependencies {
-    implementation 'com.iqiyi.xcrash:xcrash-android-lib:3.0.0'
+    implementation 'com.vmos:xcrash-android-lib:3.1.1'
 }
 ```
 

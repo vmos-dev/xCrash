@@ -23,6 +23,7 @@
 package xcrash;
 
 import android.app.ActivityManager;
+import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 import android.os.Debug;
@@ -73,6 +74,23 @@ class Util {
     static final String nativeLogSuffix = ".native.xcrash";
     static final String anrLogSuffix = ".anr.xcrash";
     static final String traceLogSuffix = ".trace.xcrash";
+
+    static String getProcessName() {
+        String processName = null;
+        // 首选方案
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                processName = Application.getProcessName();
+            } else {
+                final Class<?> atClass = Class.forName("android.app.ActivityThread");
+                final Method currentProcessNameMethod = atClass.getDeclaredMethod("currentProcessName");
+                currentProcessNameMethod.setAccessible(true);
+                processName = (String) currentProcessNameMethod.invoke(null);
+            }
+        } catch (Exception ignored) {
+        }
+        return processName;
+    }
 
     static String getProcessName(Context ctx, int pid) {
 

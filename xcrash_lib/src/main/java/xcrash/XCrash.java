@@ -116,17 +116,7 @@ public final class XCrash {
 
         //get PID and process name
         int pid = android.os.Process.myPid();
-        String processName = null;
-        if (params.enableJavaCrashHandler || params.enableAnrHandler) {
-            processName = Util.getProcessName(ctx, pid);
-
-            //capture only the ANR of the main process
-            if (params.enableAnrHandler) {
-                if (TextUtils.isEmpty(processName) || !processName.equals(packageName)) {
-                    params.enableAnrHandler = false;
-                }
-            }
-        }
+        String processName = Util.getProcessName();
 
         //init file manager
         FileManager.getInstance().initialize(

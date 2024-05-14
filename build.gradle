@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:7.2.0'
     }
 }
 
@@ -34,9 +34,9 @@ ext {
     abiFilters = "armeabi-v7a,arm64-v8a,x86,x86_64"
     useASAN = false
 
-    POM_GROUP_ID = "com.iqiyi.xcrash"
+    POM_GROUP_ID = "com.vmos"
     POM_ARTIFACT_ID = "xcrash-android-lib"
-    POM_VERSION_NAME = "3.1.0"
+    POM_VERSION_NAME = "3.1.1"
 
     POM_NAME = "xCrash Android Lib"
     POM_DESCRIPTION = "xCrash provides the Android app with the ability to capture java crash, native crash and ANR."

@@ -62,7 +62,7 @@ xCrash 已经在 [爱奇艺](http://www.iqiyi.com/) 的不同平台（手机，�
 
 ```Gradle
 dependencies {
-    implementation 'com.iqiyi.xcrash:xcrash-android-lib:3.0.0'
+    implementation 'com.vmos:xcrash-android-lib:3.1.1'
 }
 ```
 
